@@ -1,0 +1,12 @@
+@POsWebAPITesting_HostAddress = https://localhost:44341 
+# http://localhost:5016
+
+GET {{POsWebAPITesting_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{POsWebAPITesting_HostAddress}}/api/countries/
+Accept: application/json
+
+###

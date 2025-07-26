@@ -1,0 +1,84 @@
+﻿@model POsWebAPITesting.Models.Country
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Country</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CountryId" />
+            <div class="form-group">
+                <label asp-for="CountryName" class="control-label"></label>
+                <input asp-for="CountryName" class="form-control" />
+                <span asp-validation-for="CountryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryCode" class="control-label"></label>
+                <input asp-for="CountryCode" class="form-control" />
+                <span asp-validation-for="CountryCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <input asp-for="Region" class="form-control" />
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryCreationTime" class="control-label"></label>
+                <input asp-for="CountryCreationTime" class="form-control" />
+                <span asp-validation-for="CountryCreationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryCreatorUserId" class="control-label"></label>
+                <input asp-for="CountryCreatorUserId" class="form-control" />
+                <span asp-validation-for="CountryCreatorUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryDeleterUserId" class="control-label"></label>
+                <input asp-for="CountryDeleterUserId" class="form-control" />
+                <span asp-validation-for="CountryDeleterUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryDeletionTime" class="control-label"></label>
+                <input asp-for="CountryDeletionTime" class="form-control" />
+                <span asp-validation-for="CountryDeletionTime" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CountryIsDefault" /> @Html.DisplayNameFor(model => model.CountryIsDefault)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="CountryIsDeleted" /> @Html.DisplayNameFor(model => model.CountryIsDeleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryLastModificationTime" class="control-label"></label>
+                <input asp-for="CountryLastModificationTime" class="form-control" />
+                <span asp-validation-for="CountryLastModificationTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryLastModifierUserId" class="control-label"></label>
+                <input asp-for="CountryLastModifierUserId" class="form-control" />
+                <span asp-validation-for="CountryLastModifierUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

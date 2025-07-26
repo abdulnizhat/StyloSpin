@@ -1,0 +1,95 @@
+﻿@model IEnumerable<POsWebAPITesting.Models.Country>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryCreationTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryCreatorUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryDeleterUserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryDeletionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryIsDefault)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryIsDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryLastModificationTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryLastModifierUserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCreationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCreatorUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryDeleterUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryDeletionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryIsDefault)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryIsDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryLastModificationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryLastModifierUserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CountryId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CountryId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CountryId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
